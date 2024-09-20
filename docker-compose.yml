@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./src/:/app
+      # - ./yourpath/fullchain.pem:/etc/ssl/notebook/notebook.pem:ro
+      # -. /yourpath/privkey.pem:/etc/ssl/notebook/notebook-key.pem:ro
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+      JUPYTER_TOKEN: "PleaseTypeHere"
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
