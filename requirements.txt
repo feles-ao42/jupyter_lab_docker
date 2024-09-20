@@ -1,4 +1,0 @@
-notebook
-opencv-contrib-python
-numpy
-matplotlib
